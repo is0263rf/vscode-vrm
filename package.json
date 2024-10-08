@@ -1,0 +1,57 @@
+{
+  "name": "vscode-vrm",
+  "displayName": "VRM viewer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/is0263rf/vscode-vrm"
+  },
+  "publisher": "is0263rf",
+  "description": "A viewer for .vrm and .vrma.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "vrm.previewVrm",
+        "displayName": "Preview vrm file",
+        "selector": [
+          {
+            "filenamePattern": "*.vrm"
+          }
+        ],
+        "priority": "default"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@types/three": "^0.169.0",
+    "@types/vscode": "^1.94.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.11.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "^3.1.2",
+    "three": "^0.169.0"
+  }
+}
